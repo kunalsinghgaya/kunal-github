@@ -7,6 +7,7 @@ function App() {
     { id: 1, name: "John Doe", email: "john@example.com", address: "123 Main St" },
     { id: 2, name: "Jane Smith", email: "jane@example.com", address: "456 Oak Ave" },
     { id: 3, name: "Mike Brown", email: "mike@example.com", address: "789 Pine Rd" },
+    { id: 4, name: "New SMITH", email: "smith@example.com", address: "888 Pine Rd" },
   ];
 
   const [selectedId, setSelectedId] = useState("");
