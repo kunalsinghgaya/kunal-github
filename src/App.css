@@ -25,6 +25,11 @@
   font-size: calc(10px + 2vmin);
   color: red;
   background-size: cover;
+  @media (max-width: 768px) {
+    color: antiquewhite;
+    background-image: url("https://d1lt2ralzv8247.cloudfront.net/images/origin/Jio_Mobile_BG_49ea4e06b7.webp");
+  }
+
 }
 
 .search-bar {
@@ -58,7 +63,13 @@ option {
   cursor: pointer;
   border: none;
   border-radius: 10px;
+  @media (max-width: 768px) {
+    background-color: crimson;
+    width: 44%;
+  }
 }
+
+
 
 .App-link {
   color: #61dafb;
