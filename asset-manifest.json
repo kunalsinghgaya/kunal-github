@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/kunal-github/static/css/main.12f3182d.css",
-    "main.js": "/kunal-github/static/js/main.ed165dca.js",
+    "main.js": "/kunal-github/static/js/main.06e6d020.js",
     "index.html": "/kunal-github/index.html",
     "main.12f3182d.css.map": "/kunal-github/static/css/main.12f3182d.css.map",
-    "main.ed165dca.js.map": "/kunal-github/static/js/main.ed165dca.js.map"
+    "main.06e6d020.js.map": "/kunal-github/static/js/main.06e6d020.js.map"
   },
   "entrypoints": [
     "static/css/main.12f3182d.css",
-    "static/js/main.ed165dca.js"
+    "static/js/main.06e6d020.js"
   ]
 }
