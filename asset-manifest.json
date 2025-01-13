@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kunal-github/static/css/main.e3ae21f0.css",
+    "main.js": "/kunal-github/static/js/main.ed165dca.js",
+    "index.html": "/kunal-github/index.html",
+    "main.e3ae21f0.css.map": "/kunal-github/static/css/main.e3ae21f0.css.map",
+    "main.ed165dca.js.map": "/kunal-github/static/js/main.ed165dca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3ae21f0.css",
+    "static/js/main.ed165dca.js"
+  ]
+}
