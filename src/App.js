@@ -72,7 +72,8 @@ function App() {
             boxShadow: "0 0 10px rgba(0,0,0,0.3)",
             borderRadius: "8px",
             zIndex: 1000,
-            color: "black"
+            color: "black",
+            textAlign: "start",
           }}
         >
           <h2>User Details</h2>
