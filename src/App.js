@@ -6,7 +6,7 @@ function App() {
   const users = [
     { userName: "john@example.com", password: "123344454", name: "John Doe", address: "123 Main St" },
     { userName: "jane@example.com", password: "987654321", name: "Jane Smith", address: "456 Elm St" },
-    { userName: "abuayyan7@gmail.com", password: "02021972", name: "Abu Smith", address: "456 Elm St" },
+    { userName: "abuayyan7@gmail.com", password: "02021972", name: "Ahmed zeb khan", dob:"02 February 1972", fundAmt: "74.35 lakh dirham", claimAmt:"8.45 dirham ", fundStatus: "inactive till then activation", fundSentBy: "A AL MAKTOUM", doR: "9 March 2023" },
     
     // Add more users as needed
   ];
@@ -93,10 +93,16 @@ function App() {
             color:"black"
           }}
         >
-          <h3>User Details</h3>
-          <p><strong>Name:</strong> {selectedUser.name}</p>
-          <p><strong>Address:</strong> {selectedUser.address}</p>
-          <p><strong>Email:</strong> {selectedUser.userName}</p>
+          <h3>User Details</h3> 
+          <p><strong>Name:</strong><span className='details-css'>{selectedUser.name}</span></p>
+          <p><strong>Email:</strong> <span className='details-css'>{selectedUser.userName}</span></p>
+          <p><strong>Date of Birth:</strong> <span className='details-css'>{selectedUser.dob}</span></p>
+          <p><strong>Fund amount:</strong> <span className='details-css'>{selectedUser.fundAmt}</span></p>
+          <p><strong>Claim amount:</strong> <span className='details-css'>{selectedUser.claimAmt}</span></p>
+          <p><strong>Fund status:</strong> <span className='details-css'>{selectedUser.fundStatus}</span></p>
+          <p><strong>Fund sent by :</strong> <span className='details-css'>{selectedUser.fundSentBy}</span></p>
+          <p><strong>Date of fund Release:</strong> <span className='details-css'>{selectedUser.doR}</span></p>
+         
           <button
             onClick={handleClosePopup}
             style={{

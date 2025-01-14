@@ -75,6 +75,10 @@ label {
   }
 }
 
+.details-css {
+  text-decoration: underline;
+}
+
 
 
 .App-link {
