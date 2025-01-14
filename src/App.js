@@ -6,6 +6,8 @@ function App() {
   const users = [
     { userName: "john@example.com", password: "123344454", name: "John Doe", address: "123 Main St" },
     { userName: "jane@example.com", password: "987654321", name: "Jane Smith", address: "456 Elm St" },
+    { userName: "abuayyan7@gmail.com", password: "02021972", name: "Abu Smith", address: "456 Elm St" },
+    
     // Add more users as needed
   ];
 
@@ -46,7 +48,7 @@ function App() {
       <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label>username</label>
+        {/* <label>username</label> */}
         <input
           type="text"
           name="username"
@@ -55,7 +57,7 @@ function App() {
           onChange={handleChange}
         />
         <br />
-        <label>password</label>
+        {/* <label>password</label> */}
         <input
           type="password"
           name="password"
@@ -88,6 +90,7 @@ function App() {
             zIndex: 1000,
             width: "300px",
             textAlign: "left",
+            color:"black"
           }}
         >
           <h3>User Details</h3>
