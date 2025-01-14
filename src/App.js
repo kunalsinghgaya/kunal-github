@@ -3,97 +3,106 @@ import './App.css';
 import React, { useState } from "react";
 
 function App() {
-  const data = [
-    { id: 1, name: "John Doe", email: "john@example.com", address: "123 Main St" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com", address: "456 Oak Ave" },
-    { id: 3, name: "Mike Brown", email: "mike@example.com", address: "789 Pine Rd" },
-    { id: 4, name: "New SMITH", email: "smith@example.com", address: "888 Pine Rd" },
+  const users = [
+    { userName: "john@example.com", password: "123344454", name: "John Doe", address: "123 Main St" },
+    { userName: "jane@example.com", password: "987654321", name: "Jane Smith", address: "456 Elm St" },
+    // Add more users as needed
   ];
 
-  const [selectedId, setSelectedId] = useState("");
-  const [popupData, setPopupData] = useState(null);
+  const [credentials, setCredentials] = useState({ username: "", password: "" });
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [error, setError] = useState("");
 
-  // Handle search action
-  const handleSearch = () => {
-    const result = data.find((item) => item.id === Number(selectedId));
-    if (result) {
-      setPopupData(result); // Set data to display in popup
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Find the user with matching username and password
+    const user = users.find(
+      (u) => u.userName === credentials.username && u.password === credentials.password
+    );
+
+    if (user) {
+      setSelectedUser(user); // Show popup with user details
+      setError(""); // Clear errors
     } else {
-      alert("No record found for the selected ID!");
+      setError("Invalid username or password");
+      setSelectedUser(null); // Clear any previous selection
     }
   };
 
-  // Close the popup
-  const closePopup = () => {
-    setPopupData(null);
+  const handleClosePopup = () => {
+    setSelectedUser(null);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-      <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Search by ID</h1>
+      WELCOME TO GBMONITO
+      <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <label>username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter Username"
+          value={credentials.username}
+          onChange={handleChange}
+        />
+        <br />
+        <label>password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          value={credentials.password}
+          onChange={handleChange}
+        />
+        <br />
+        <button
+          type="submit"
+          className='button-css'
+        >
+          Login
+        </button>
+      </form>
+      {error && <p style={{ color: "red" , backgroundColor: "white" , borderRadius:"5px" }}>{error}</p>}
 
-      {/* Dropdown to select an ID */}
-      <label htmlFor="id-select">Select ID:</label>
-      <select
-        id="id-select"
-        className='search-bar'
-        value={selectedId}
-        onChange={(e) => setSelectedId(e.target.value)}
-        style={{ marginLeft: "10px", padding: "5px" }}
-      >
-        <option value="">--Select ID--</option>
-        {data.map((item) => (
-          <option key={item.id} value={item.id}>
-            {item.id}
-          </option>
-        ))}
-      </select>
-
-      {/* Search Button */}
-      <button
-      className='button-css'
-        onClick={handleSearch}
-      >
-        Search
-      </button>
-
-      {/* Popup to show user details */}
-      {popupData && (
+      {/* Popup */}
+      {selectedUser && (
         <div
           style={{
             position: "fixed",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            backgroundColor: "#fff",
+            backgroundColor: "white",
+            border: "1px solid #ccc",
+            borderRadius: "10px",
             padding: "20px",
-            boxShadow: "0 0 10px rgba(0,0,0,0.3)",
-            borderRadius: "8px",
             zIndex: 1000,
-            color: "black",
-            textAlign: "start",
+            width: "300px",
+            textAlign: "left",
           }}
         >
-          <h2>User Details</h2>
-          <p>
-            <strong>Name:</strong> {popupData.name}
-          </p>
-          <p>
-            <strong>Email:</strong> {popupData.email}
-          </p>
-          <p>
-            <strong>Address:</strong> {popupData.address}
-          </p>
+          <h3>User Details</h3>
+          <p><strong>Name:</strong> {selectedUser.name}</p>
+          <p><strong>Address:</strong> {selectedUser.address}</p>
+          <p><strong>Email:</strong> {selectedUser.userName}</p>
           <button
-            onClick={closePopup}
+            onClick={handleClosePopup}
             style={{
               marginTop: "10px",
-              padding: "5px 10px",
-              backgroundColor: "#DC3545",
+              backgroundColor: "#FF0000",
               color: "#fff",
+              padding: "10px 20px",
               border: "none",
+              borderRadius: "5px",
               cursor: "pointer",
             }}
           >
@@ -102,10 +111,9 @@ function App() {
         </div>
       )}
 
-      {/* Popup overlay (optional, to make background dim) */}
-      {popupData && (
+      {/* Overlay */}
+      {selectedUser && (
         <div
-          onClick={closePopup}
           style={{
             position: "fixed",
             top: 0,
@@ -115,22 +123,11 @@ function App() {
             backgroundColor: "rgba(0, 0, 0, 0.5)",
             zIndex: 999,
           }}
+          onClick={handleClosePopup}
         ></div>
       )}
     </div>
 
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
       </header>
     </div>
   );

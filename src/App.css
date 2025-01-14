@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -32,7 +32,11 @@
 
 }
 
-.search-bar {
+h2{
+  text-align: center;
+}
+
+input {
   width: 100%;
   border: 1px rgba(34, 31, 31, 0.6);
   color: black;
@@ -45,27 +49,29 @@
   margin-bottom: 1rem;
   
 }
-option {
+label {
   display: inline-block;
-  font-size: 12px;
-  color: rgba(34, 31, 31, 0.6);
+  font-size: 20px;
+  /* color: rgba(34, 31, 31, 0.6); */
   margin-bottom: 4px;
   font-family: roboto;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 16px;
 }
 
 .button-css {
-  margin-left: 10px;
+  height: 5vh;
+  text-align: center;
+  margin-left: 75%;
   padding: 5px 10px;
   background-color: brown;
   color: floralwhite;
   cursor: pointer;
   border: none;
+  width: 35%;
   border-radius: 10px;
   @media (max-width: 768px) {
     background-color: crimson;
-    width: 44%;
   }
 }
 
