@@ -14,6 +14,11 @@ function App() {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [selectedUser, setSelectedUser] = useState(null);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,14 +63,20 @@ function App() {
         />
         <br />
         {/* <label>password</label> */}
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter Password"
-          value={credentials.password}
-          onChange={handleChange}
-        />
-        <br />
+        <div  style={{position:"relative"}}>
+        <button type="button" onClick={togglePasswordVisibility} style={{position:"absolute",right:"-29px", top:"12px", border: 'none', background: 'transparent' }}>
+        {showPassword ? '🙈' : '👁️'}
+      </button>
+      <input
+        type={showPassword ? 'text' : 'password'}
+        name="password"
+        placeholder="Enter Password"
+        value={credentials.password}
+        onChange={handleChange}
+      />
+
+    </div>
+        {/* <br /> */}
         <button
           type="submit"
           className='button-css'
@@ -73,7 +84,7 @@ function App() {
           Login
         </button>
       </form>
-      {error && <p style={{ color: "red" , backgroundColor: "white" , borderRadius:"5px" }}>{error}</p>}
+      {error && <p style={{ padding:"5px", color: "red" , backgroundColor: "white" , borderRadius:"5px" }}>{error}</p>}
 
       {/* Popup */}
       {selectedUser && (

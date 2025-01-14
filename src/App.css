@@ -62,13 +62,13 @@ label {
 .button-css {
   height: 5vh;
   text-align: center;
-  margin-left: 75%;
+  margin-left: 70%;
   padding: 5px 10px;
   background-color: brown;
   color: floralwhite;
   cursor: pointer;
   border: none;
-  width: 35%;
+  width: 45%;
   border-radius: 10px;
   @media (max-width: 768px) {
     background-color: crimson;
