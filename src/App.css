@@ -15,19 +15,21 @@
 
 .App-header {
   /* background-color: #282c34; */
-  background-image: url("https://d1lt2ralzv8247.cloudfront.net/images/origin/Jio_Desktop_BG_a6f79f6a44.webp");
+  background-image: url("./logo.jpg");
   min-height: 100vh;
-  background-position: bottom;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  background-repeat: no-repeat;
   font-size: calc(10px + 2vmin);
   color: red;
-  background-size: cover;
+  background-size: 100% 100vh;
   @media (max-width: 768px) {
-    color: antiquewhite;
-    background-image: url("https://d1lt2ralzv8247.cloudfront.net/images/origin/Jio_Mobile_BG_49ea4e06b7.webp");
+    color: red;
+    background-image: url("./logo.jpg");
+    background-size: 133% 100vh;
   }
 
 }
@@ -62,17 +64,35 @@ label {
 .button-css {
   height: 5vh;
   text-align: center;
-  margin-left: 70%;
+  margin-left: 0%;
   padding: 5px 10px;
   background-color: brown;
   color: floralwhite;
   cursor: pointer;
   border: none;
-  width: 45%;
+  width: 34%;
   border-radius: 10px;
   @media (max-width: 768px) {
     background-color: crimson;
   }
+}
+
+.pop-up-css {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #61dafb;
+  border: 1px solid burlywood;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000;
+  width: 50%;
+  text-align: start;
+  color: black;
+  @media (max-width: 768px) {
+  }
+  width: 73%;
 }
 
 .details-css {
