@@ -1,5 +1,24 @@
 .App {
   /* text-align: center; */
+  background-repeat: no-repeat;
+  background-image: url("./logo.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-size: 100% 100vh;
+  @media screen (max-width: 768px) {
+    background-image: url("./logo.jpg");
+    background-size: 133% 100vh;
+  }
+}
+
+.form-css{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+}
+
+form{
+  padding: 21px 86px 49px 51px;
 }
 
 .App-logo {
@@ -15,28 +34,46 @@
 
 .App-header {
   /* background-color: #282c34; */
-  background-image: url("./logo.jpg");
-  min-height: 100vh;
-  background-position: center;
-  display: flex;
+
+
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   /* justify-content: center; */
-  background-repeat: no-repeat;
-  font-size: calc(10px + 2vmin);
-  color: red;
-  background-size: 100% 100vh;
+
+  /* font-size: calc(10px + 2vmin); */
+  /* color: red; */
+
   @media (max-width: 768px) {
-    color: red;
-    background-image: url("./logo.jpg");
-    background-size: 133% 100vh;
+    /* color: red; */
+
   }
 
 }
 
-h2{
+h1{
   text-align: center;
-  color: brown;
+  color: darkgoldenrod;
+  font-size: 2rem;
+  font-weight: bold;
+  /* color: red; */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+h2{
+  /* text-align: center; */
+  color: rgb(255, 255, 255);
+  font-size: 2rem; /* Adjust font size as needed */
+  font-weight: bold;
+  /* color: red; */
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
+}
+
+.box-css{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  width: 550px;
+
 }
 
 input {
@@ -49,7 +86,7 @@ input {
   border-radius: 4px;
   background: pink;
   outline: none;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   
 }
 label {
@@ -71,7 +108,7 @@ label {
   color: floralwhite;
   cursor: pointer;
   border: none;
-  width: 34%;
+  width: 54%;
   border-radius: 10px;
   @media (max-width: 768px) {
     background-color: crimson;

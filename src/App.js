@@ -75,12 +75,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
 
-        <div style={{marginTop:"8%"}}>
-       <h2> WELCOME TO GBMONITO </h2>
-          <h2>Login</h2>
-          <form onSubmit={handleSubmit}>
+      <header className="App-header">
+        <h1>WELCOME TO GB MONITO</h1>
+      <div className="form-css" >
+        <div className="box-css" style={{marginTop:"8%"}}>
+          <form onSubmit={handleSubmit} >
+          <h2>Log In</h2>
             {/* <label>username</label> */}
             <input
               type="text"
@@ -214,7 +215,9 @@ function App() {
             ></div>
           )}
         </div>
+        </div>
       </header>
+  
     </div>
   );
 }
