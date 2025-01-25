@@ -2,6 +2,12 @@
 import "./App.css";
 import React, { useState } from "react";
 import userA from "./userA.jpg";
+import Header from "./components/Header";
+import AccountOverview from "./components/AccountOverview";
+import AlertSection from "./components/AlertSection";
+import ActionsSection from "./components/ActionSection"
+import FooterMenu from "./components/FooterMenu";
+
 
 function App() {
   const users = [
@@ -40,9 +46,14 @@ function App() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showMore, setShowMorre] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
+  };
+
+  const toggleShowMore = () => {
+    setShowMorre((prevState) => !prevState);
   };
 
   const handleChange = (e) => {
@@ -74,10 +85,11 @@ function App() {
   };
 
   return (
+    <>
+    {!showMore ?
     <div className="App">
-
       <header className="App-header">
-        <h1>WELCOME TO GB MONITO</h1>
+        <h1>GB MONITO</h1>
       <div className="form-css" >
         <div className="box-css" style={{marginTop:"8%"}}>
           <form onSubmit={handleSubmit} >
@@ -99,7 +111,7 @@ function App() {
                 style={{
                   position: "absolute",
                   right: "-29px",
-                  top: "12px",
+                  top: "18px",
                   border: "none",
                   background: "transparent",
                 }}
@@ -118,19 +130,37 @@ function App() {
             <button type="submit" className="button-css">
               Login
             </button>
-          </form>
-          {error && (
+
+            <div  style={{
+                textAlign: "center",
+                color: "white",
+                fontFamily: 700,
+                fontSize: "1.5rem",
+                marginTop: "2.5rem"
+              }}>
+              <div style={{marginBottom: "0.5rem"}}>OR</div>
+              <br></br>
+              
+              <span>Forgot Password?</span>
+
+            </div>
+
+            {error && (
             <p
               style={{
                 padding: "5px",
                 color: "red",
-                backgroundColor: "white",
+                // backgroundColor: "white",
                 borderRadius: "5px",
               }}
             >
               {error}
             </p>
           )}
+
+
+          </form>
+
 
           {/* Popup */}
           {selectedUser && (
@@ -181,6 +211,9 @@ function App() {
                   <span>{selectedUser.doR}</span>
                 </React.Fragment>
               </div>
+              <div style={{display: "flex",
+                  justifyContent: "space-between", marginTop:
+                  "1rem"}}>
 
               <button
                 onClick={handleClosePopup}
@@ -192,15 +225,32 @@ function App() {
                   border: "none",
                   borderRadius: "5px",
                   cursor: "pointer",
+                  width: "28%",
                 }}
               >
                 Close
               </button>
+              <button
+                onClick={toggleShowMore}
+                style={{
+                  marginTop: "10px",
+                  backgroundColor: "#FF0000",
+                  color: "#fff",
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  width: "28%",
+                }}
+              >
+                More
+              </button>
+              </div>
             </div>
           )}
 
           {/* Overlay */}
-          {selectedUser && (
+          {/* {selectedUser && (
             <div
               style={{
                 position: "fixed",
@@ -213,12 +263,21 @@ function App() {
               }}
               onClick={handleClosePopup}
             ></div>
-          )}
+          )} */}
         </div>
         </div>
       </header>
   
-    </div>
+    </div> :
+        <div>
+        <Header />
+        <AccountOverview />
+        <AlertSection />
+        <ActionsSection />
+        <FooterMenu />
+      </div>
+}  
+    </>
   );
 }
 
