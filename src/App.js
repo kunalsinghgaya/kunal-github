@@ -269,7 +269,7 @@ function App() {
       </header>
   
     </div> :
-        <div>
+        <div style={{ height: '100vh', overflowY: 'auto' }}>
         <Header />
         <AccountOverview />
         <AlertSection />
