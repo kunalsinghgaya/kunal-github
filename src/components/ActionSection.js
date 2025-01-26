@@ -10,7 +10,7 @@ const actions = [
 ];
 
 const ActionsSection = () => (
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px", padding: "10px", marginBottom:"1rem" }}>
+  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "40px", padding: "10px", marginBottom:"1rem" }}>
     {actions.map((action) => (
       <div key={action.name} style={{ textAlign: "center" }}>
         <div style={{ fontSize: "30px", marginBottom: "5px" }}>{action.icon}</div>
